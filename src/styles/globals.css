@@ -1,15 +1,14 @@
 @import "tailwindcss";
 
-
 @theme {
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-/* html, body {
+html, body {
   margin: 0;
   padding: 0;
-} */
+}
 
 body {
   background-color: black;
@@ -20,3 +19,23 @@ body {
   border-bottom: 1px solid white !important;
   padding: 1rem !important;
 } */
+
+/* Force cursor pointer on all Clerk buttons */
+/* [data-clerk-sign-in-button],
+[data-clerk-sign-in-button] *,
+.cl-signInButton,
+.cl-signInButton *,
+button[type="button"],
+button[type="submit"] {
+  cursor: pointer !important;
+} */
+
+/* Target any element with clerk classes */
+/* [class*="cl-"] {
+  cursor: pointer !important;
+} */
+
+/* force cursor on everything in the nav */
+nav div div * {
+  cursor: pointer !important;
+}

@@ -8,7 +8,9 @@ export function TopNav() {
   
         <div>
             <SignedOut>
-                <SignInButton/>
+                <div className="cursor-pointer">
+                    <SignInButton/>
+                </div>
             </SignedOut>
             <SignedIn>
                 <UserButton/>
