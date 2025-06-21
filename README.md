@@ -2,8 +2,8 @@
 
 ## TODO
 
-- [ ] Make it deloy (vercel)
-- [ ] Scaffold basic ui with mock data
+- [x] Make it deloy (vercel)
+- [x] Scaffold basic ui with mock data
 - [ ] Actually set up a database
 - [ ] Attach database to UI
 - [ ] Add authentification
