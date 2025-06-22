@@ -29,7 +29,7 @@ async function Images() {
             className="w-full h-full rounded-2xl cursor-pointer"
           />
           {/* <div className="absolute bottom-1 left-0 w-full text-gray-200 text-center text-sm font-bold py-2 px-2">{image.name}</div> */}
-          <div className="absolute bottom-1 left-0 w-full text-gray-200 text-center text-sm font-bold py-2 px-2 truncate">
+          <div className="absolute bottom-1 left-0 w-full text-gray-200 text-center text-sm font-bold py-2 px-6 truncate">
             <span className="relative z-10">{image.name}</span>
             <span
               className="pointer-events-none absolute right-0 top-0 h-full w-8 bg-gradient-to-l from-gray-800/40 to-transparent"
