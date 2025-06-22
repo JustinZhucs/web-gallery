@@ -1,4 +1,5 @@
 import { getImage } from "~/server/queries";
+import { Modal } from "./modal";
 
 export default async function PhotoModal({
   params,
@@ -10,5 +11,9 @@ export default async function PhotoModal({
   if (isNaN(idAsNumber)) throw new Error("Invalid photo ID");
 
   const image = await getImage(idAsNumber);
-  return <div><img src={image.url} className="w-96"/></div>;
+  return (
+    <Modal>
+      <img src={image.url} className="w-96"/>
+    </Modal>
+  );
 }
