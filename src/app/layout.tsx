@@ -51,7 +51,7 @@ export default function RootLayout({
         <body className={`font-sans ${geist.variable} flex flex-col gap-4 m-0`}>
           <TopNav />
           {children}
-          </body>
+        </body>
       </html>
     </ClerkProvider>
   );

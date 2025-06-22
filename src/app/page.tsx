@@ -1,13 +1,19 @@
 import { SignedOut, SignedIn } from "@clerk/nextjs";
+import { getMyImages } from "~/server/queries";
 import { db } from "~/server/db";
 
 export const dynamic = "force-dynamic";
 
 async function Images() {
-  const images = await db.query.images.findMany({
-    orderBy: (model, { desc }) => desc(model.id),
-  });
+  /* The reason function Images is async is because we need to await the query to the database
+  before we can render the images: 
+  - db.query.images.findMany() returns a Promise
+  - need to await the result to get the actual data from database
+  - This is the server component patterm in Next.js
+  */
 
+  const images = await getMyImages();
+  
   return (
     <div className="flex flex-wrap gap-4">
     {/* flex-wrap makes more than one row if needed, won't stop at one row only */}
