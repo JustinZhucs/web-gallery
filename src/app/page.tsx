@@ -1,5 +1,6 @@
 import { SignedOut, SignedIn } from "@clerk/nextjs";
 import { getMyImages } from "~/server/queries";
+import Image from "next/image";
 import { db } from "~/server/db";
 
 export const dynamic = "force-dynamic";
@@ -15,12 +16,27 @@ async function Images() {
   const images = await getMyImages();
   
   return (
-    <div className="flex flex-wrap gap-4">
+    <div className="flex flex-wrap justify-center gap-4">
     {/* flex-wrap makes more than one row if needed, won't stop at one row only */}
     {images.map((image) => (
-      <div key={image.id} className="flex w-48 flex-col">
-        <img src={image.url} />
-        <div>{image.name}</div>
+      <div key={image.id} className="flex w-48 h-48 flex-col items-center justify-center">
+        <div className="relative w-full h-50 flex items-center justify-center rounded-3xl bg-gray-800/40 p-3 pb-11 overflow-hidden">
+          <Image src={image.url} 
+            style={{ objectFit: "cover" }}
+            width={192}
+            height={192}
+            alt={image.name}
+            className="w-full h-full rounded-2xl cursor-pointer"
+          />
+          {/* <div className="absolute bottom-1 left-0 w-full text-gray-200 text-center text-sm font-bold py-2 px-2">{image.name}</div> */}
+          <div className="absolute bottom-1 left-0 w-full text-gray-200 text-center text-sm font-bold py-2 px-2 truncate">
+            <span className="relative z-10">{image.name}</span>
+            <span
+              className="pointer-events-none absolute right-0 top-0 h-full w-8 bg-gradient-to-l from-gray-800/40 to-transparent"
+              aria-hidden="true"
+            />
+          </div>
+        </div>
       </div>
     ))}
   </div>
