@@ -39,3 +39,8 @@ button[type="submit"] {
 nav div div * {
   cursor: pointer !important;
 }
+
+dialog {
+  max-width: 100vw;
+  max-height: 100vh;
+}
