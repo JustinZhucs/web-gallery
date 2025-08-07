@@ -16,7 +16,7 @@ export function TopNav() {
           Gallery
         </button>
   
-        <div className="flex flex-row items-center gap-4">
+        <div className="flex flex-row items-center gap-4 dark">
             <SignedOut>
                 <div className="cursor-pointer">
                     <SignInButton/>

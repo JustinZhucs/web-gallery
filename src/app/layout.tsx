@@ -18,6 +18,9 @@ import Link from "next/link";
 import { TopNav } from "./_components/topnav";
 import { extractRouterConfig } from "uploadthing/server";
 import { ourFileRouter } from "./api/uploadthing/core";
+import { Toaster } from "sonner";
+
+
 
 
 export const metadata: Metadata = {
@@ -40,7 +43,7 @@ export default function RootLayout({
 }) {
   return (
     <ClerkProvider>
-      <html lang="en" className="m-0">
+      <html lang="en" className="dark m-0">
       <NextSSRPlugin
           /**
            * The `extractRouterConfig` will extract **only** the route configs
@@ -55,6 +58,7 @@ export default function RootLayout({
           <main className="flex-1 overflow-y-auto">{children}</main>
           {modal}
           <div id="modal-root" />
+          <Toaster />
         </body>
       </html>
     </ClerkProvider>
