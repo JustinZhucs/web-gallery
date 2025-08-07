@@ -9,7 +9,7 @@ export function TopNav() {
     const router = useRouter();
 
     return (
-      <nav className="flex w-full items-center justify-between border-b border-white p-4 text-xl font-semibold">
+      <nav className="flex w-full items-center justify-between border-b border-white p-4 text-xl font-semibold overflow-hidden">
         <button 
           onClick={() => router.push("/")} 
           className="text-3xl duration-400 hover:text-teal-100 cursor-pointer"

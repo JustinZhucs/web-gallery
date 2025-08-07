@@ -13,6 +13,7 @@
 - [x] Use Next/Image component
 - [x] Error management (w/ Sentry)
 - [X] Routing/image page (parallel route)
+- [ ] Update upload button to be less cringes
 - [ ] Delete button (w/ Server Actions)
 - [ ] Analytics (posthog)
 - [ ] Ratelimiting (upstash)

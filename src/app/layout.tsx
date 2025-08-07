@@ -50,25 +50,9 @@ export default function RootLayout({
            */
           routerConfig={extractRouterConfig(ourFileRouter)}
         />
-        <body className={`font-sans ${geist.variable}`}>
-          <div className="h-screen grid grid-rows-[8vh,1fr]"> 
-            {/* 1fr: one fraction, 
-              grid-rows-[auto,1fr] will make the navbar grow when there's not enough main content 
-              to fill up the screen
-              ex. ┌─────────────────┐ ← 100vh (1000px total)
-                  │   TopNav        │ ← auto (60px - only what it needs)
-                  │   (auto)        │
-                  ├─────────────────┤
-                  │   Main Content  │ ← 1fr (940px - all remaining space)
-                  │   (940px)       │
-                  └─────────────────┘
-              This way the topnav height can't be controled,
-              right now, I changed auto to 8vh to make topnav's height fixed and also visible on different screen sizes
-              8vh = 8% of viewport height
-              Scales with screen = Bigger on larger screens*/}
-            <TopNav />
-            <main className="overflow-y-scroll">{children}</main>
-          </div>
+        <body className={`font-sans ${geist.variable} h-screen flex flex-col`}>
+          <TopNav />
+          <main className="flex-1 overflow-y-auto">{children}</main>
           {modal}
           <div id="modal-root" />
         </body>
