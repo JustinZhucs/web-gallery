@@ -12,8 +12,7 @@ import { useAuth, useUser } from "@clerk/nextjs"
 export function PostHogProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY as string, {
-        api_host: "/relay-lmYD",
-        ui_host: 'https://us.posthog.com'
+        api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST,
       })
   }, [])
 

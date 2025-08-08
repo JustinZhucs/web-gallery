@@ -22,24 +22,24 @@ const coreConfig = {
     ignoreDuringBuilds: true,
   },
 
-  async rewrites() {
-    return [
-      {
-        source: "/relay-lmYD/static/:path*",
-        destination: "https://us-assets.i.posthog.com/static/:path*",
-      },
-      {
-        source: "/relay-lmYD/:path*",
-        destination: "https://us.i.posthog.com/:path*",
-      },
-      {
-        source: "/relay-lmYD/flags",
-        destination: "https://us.i.posthog.com/flags",
-      },
-    ];
-  },
-  // This is required to support PostHog trailing slash API requests
-  skipTrailingSlashRedirect: true, 
+  // async rewrites() {
+  //   return [
+  //     {
+  //       source: "/relay-lmYD/static/:path*",
+  //       destination: "https://us-assets.i.posthog.com/static/:path*",
+  //     },
+  //     {
+  //       source: "/relay-lmYD/:path*",
+  //       destination: "https://us.i.posthog.com/:path*",
+  //     },
+  //     {
+  //       source: "/relay-lmYD/flags",
+  //       destination: "https://us.i.posthog.com/flags",
+  //     },
+  //   ];
+  // },
+  // // This is required to support PostHog trailing slash API requests
+  // skipTrailingSlashRedirect: true, 
 };
 
 const config = withSentryConfig(coreConfig, {
