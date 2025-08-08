@@ -14,9 +14,9 @@
 - [x] Error management (w/ Sentry)
 - [X] Routing/image page (parallel route)
 - [X] Update upload button to be less cringes
-- [ ] ShadUIify (specifically toasts)
-- [ ] Delete button (w/ Server Actions)
+- [X] ShadUIify (specifically toasts)
 - [ ] Analytics (posthog)
+- [ ] Delete button (w/ Server Actions)
 - [ ] Ratelimiting (upstash)
 
 

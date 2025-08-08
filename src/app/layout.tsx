@@ -19,6 +19,8 @@ import { TopNav } from "./_components/topnav";
 import { extractRouterConfig } from "uploadthing/server";
 import { ourFileRouter } from "./api/uploadthing/core";
 import { Toaster } from "sonner";
+import { PostHogProvider } from "./_analytics/provider";
+
 
 
 
@@ -43,6 +45,7 @@ export default function RootLayout({
 }) {
   return (
     <ClerkProvider>
+      <PostHogProvider>
       <html lang="en" className="dark m-0">
       <NextSSRPlugin
           /**
@@ -61,6 +64,7 @@ export default function RootLayout({
           <Toaster />
         </body>
       </html>
+      </PostHogProvider>
     </ClerkProvider>
   );
 }
