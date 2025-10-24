@@ -31,7 +31,12 @@ export default async function FullPageImageView({ id }: { id: number }) {
         </div>
 
         <div className="flex w-full flex-col items-center gap-1 text-center text-zinc-100">
-          <h2 className="text-xl font-semibold">{image.name}</h2>
+          <h2
+            className="w-full truncate text-xl font-semibold"
+            title={image.name}
+          >
+            {image.name}
+          </h2>
           <p className="text-sm text-zinc-300">
             Uploaded by {uploaderInfo.fullName ?? "Unknown user"}
           </p>
