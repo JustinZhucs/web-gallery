@@ -45,6 +45,7 @@ A minimal image gallery built with Next.js App Router, Tailwind v4, Drizzle ORM 
 - [X] Ratelimiting (upstash)
 
 ## Additional Features/Tasks
+- [ ] Fix the error when deleting an image
 - [ ] Fix the page layout for images of different resolutions
 - [ ] Selecting images on gallery page
 - [ ] "infinite scoll"

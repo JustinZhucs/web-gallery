@@ -1,10 +1,14 @@
 import { clerkClient } from "@clerk/nextjs/server";
+import { redirect } from "next/navigation";
 import { deleteImage, getImage } from "~/server/queries";
 import { Button } from "./ui/button";
 
 export default async function FullPageImageView( props: { id: number }) {
 
   const image = await getImage(props.id);
+  if (!image) {
+    return redirect("/");
+  }
 
   const clerk = await clerkClient();
   const uploaderInfo = await clerk.users.getUser(image.userId);
