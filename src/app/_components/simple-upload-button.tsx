@@ -87,7 +87,8 @@ export function SimpleUploadButton() {
     onUploadError(error) {
       posthog.capture("upload_error", { error });
       toast.dismiss("upload-begin");
-      toast.error("Upload failed");
+      // shows "unauthorized" if user has private metadata cannot-upload set to true
+      toast.error(error.message ?? "Upload failed");
     },
 
     onClientUploadComplete() {
